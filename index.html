@@ -8,9 +8,8 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-
-<div class="container">
   <body>
+<div class="container">
 <div class="page-header">
   <header>
     <h1>Styling SharePoint with Cascading Stylesheets</h1>
@@ -19,21 +18,23 @@
 
 <main>
   <section>
+    <h2>What is SharePoint?</h2>
     <p>The first question you may have is what is SharePoint? At the core, SharePoint is a Microsoft built solution for organizations to create websites. Beyond that it allows users to easily manage their documents and content, as well as organize information into lists and libraries.</p>
     <p>My job primarily revolves around supporting a large organization’s SharePoint site collections, we also build solutions to allow our business to automate their processes. A common question we receive is “How can I make SharePoint look less like SharePoint?” It was a question I too once had! So, I took to Google and suddenly was thrust into learning Cascading Style Sheets (CSS). Because SharePoint is a web based solution, Microsoft already has CSS that you can tap into!</p>
+  </section>
+  <section>
+    <h2>Using CSS</h2>
     <p>The first course of action in changing the look and feel of your SharePoint page, or site, via CSS is to find out what class is currently applying the style. To do this, I will open the page in Google Chrome and navigate into the developer tools to identify the element I want to change. In the Elements pane, Chrome will display the code and what Styles are currently being utilized. </p>
     <p>Now that you have the Microsoft specified class, you can write your own CSS to change the look of that element or group of elements. Now you need to decide if this is a change that you want to make for the entire site collection, sub-site, or just a single page. If you decide to push this change to your entire site collection or sub-site, you must have Microsoft Publishing Services enabled on the site. You can then create a single CSS file in the editor of your choice (i.e., Brackets) and upload it to a Site Assets library. </p>
-    <p>Now that you have your CSS file uploaded to your site, it’s time to hook it up! Navigate to Site Settings and select Master page. Expand the Alternate CSS URL section.
+    <p>Now that you have your CSS file uploaded to your site, it’s time to hook it up! Navigate to Site Settings and select Master page. Expand the Alternate CSS URL section.</p>
       <figure>
         <img src="images/settings.png" alt="Alternate CSS URL settings example">
       </figure>
-    </p>
     <p>As you can see in the image above, my site is currently using the default stylesheet that Microsoft has assigned to it. If I decide to apply the alternate CSS file that I uploaded previously, I could change the setting to Specify a CSS file to be used by this site and all sites that inherit from it. Then all I have to do is pop the URL of that CSS file into the address box next to All Channels. Once I hit Save, the changes will automatically take effect and the Microsoft classes will take on the new characteristics that I assigned to them. </p>
-    <p>However, sometimes you don’t want to change the entire site and just want to inject some CSS into a single page. A common example is if I want to hide navigation on one page, I can identify the classes called on the navigation and use the display: none selector on them. Once the style elements are popped into the individual page via a Script Editor web part, it will take on the new style(s). The properties that I chose to hide will no longer be visible on the individual page.
+    <p>However, sometimes you don’t want to change the entire site and just want to inject some CSS into a single page. A common example is if I want to hide navigation on one page, I can identify the classes called on the navigation and use the display: none selector on them. Once the style elements are popped into the individual page via a Script Editor web part, it will take on the new style(s). The properties that I chose to hide will no longer be visible on the individual page.</p>
       <figure>
         <img src="images/script-editor.png" alt="Script Editor webpart CSS example">
       </figure>
-    </p>
     <p>The image above is an example web part where I have found the class that is being used for the left navigation on the page. I am using CSS to hide the navigation box, and I am then putting a larger margin around the main content box on the page so that it properly aligns with the top navigation. The benefit of having flexibility to apply CSS at the granular level is that I can modify an element or two on a page without impacting other pages on the site that are happily using those elements. </p>
     <p>This is just a taste of what you can do with CSS to change the look and feel of your SharePoint site. The great thing is that there is a plethora of resources on the internet, including Microsoft Developer Network (MSDN) articles that provide more information and commonly used classes throughout the application to make your life a little bit easier!</p>
   </section>
